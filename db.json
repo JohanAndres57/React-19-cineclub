@@ -1,0 +1,98 @@
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Titanic",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzYyN2FiZmUtYWYzMy00MzViLWJkZTMtOGY1ZjgzNWMwN2YxXkEyXkFqcGc@._V1_SX300.jpg",
+      "category": "Drama",
+      "rating": "+16",
+      "duration": 194,
+      "year": 1997,
+      "synopsis": "Una joven aristócrata y un artista sin dinero se enamoran a bordo del lujoso Titanic durante su trágico viaje inaugural en 1912.",
+      "cast": [
+        {
+          "actor": "Leonardo DiCaprio",
+          "role": "Jack Dawson"
+        },
+        {
+          "actor": "Kate Winslet",
+          "role": "Rose DeWitt Bukater"
+        }
+      ],
+      "awards": [
+        "Ganadora de 11 Premios Oscar",
+        "incluido Mejor Película"
+      ],
+      "favorite": true,
+      "createdAt": "2026-11-20T10:00:00.000Z",
+      "director": {
+        "name": "James Cameron",
+        "email": "cameron@example.com",
+        "bio": "Director canadiense conocido por superproducciones como Avatar y Terminator."
+      }
+    },
+    {
+      "id": "2",
+      "title": "Interestelar",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_SX300.jpg",
+      "category": "Ciencia Ficción",
+      "rating": "+13",
+      "duration": 169,
+      "year": 2014,
+      "synopsis": "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio para asegurar la supervivencia de la humanidad.",
+      "cast": [
+        {
+          "actor": "Matthew McConaughey",
+          "role": "Cooper"
+        },
+        {
+          "actor": "Anne Hathaway",
+          "role": "Amelia Brand"
+        }
+      ],
+      "awards": [
+        "Ganadora del Oscar a Mejores Efectos Visuales"
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-21T10:00:00.000Z",
+      "director": {
+        "name": "Christopher Nolan",
+        "email": "nolan@example.com",
+        "bio": "Director conocido por sus películas complejas."
+      }
+    },
+    {
+      "id": "3",
+      "title": "Pulp Fiction",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_SX300.jpg",
+      "category": "Crimen",
+      "rating": "+18",
+      "duration": 154,
+      "year": 1994,
+      "synopsis": "Las vidas de dos mafiosos, un boxeador y una pareja de atracadores se entrelazan en cuatro relatos de violencia y redención.",
+      "cast": [
+        {
+          "actor": "John Travolta",
+          "role": "Vincent Vega"
+        },
+        {
+          "actor": "Samuel L. Jackson",
+          "role": "Jules Winnfield"
+        }
+      ],
+      "awards": [
+        "Ganadora de la Palma de Oro en Cannes",
+        "Oscar a Mejor Guion Original"
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-22T10:00:00.000Z",
+      "director": {
+        "name": "Quentin Tarantino",
+        "bio": "Director conocido por su estilo no lineal y diálogos intensos.",
+        "email": "tarantino@example.com"
+      }
+    }
+    
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
