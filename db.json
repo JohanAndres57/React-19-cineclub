@@ -5,7 +5,7 @@
       "title": "Titanic",
       "poster": "https://m.media-amazon.com/images/M/MV5BYzYyN2FiZmUtYWYzMy00MzViLWJkZTMtOGY1ZjgzNWMwN2YxXkEyXkFqcGc@._V1_SX300.jpg",
       "category": "Drama",
-      "rating": "+16",
+      "rating": "+13",
       "duration": 194,
       "year": 1997,
       "synopsis": "Una joven aristócrata y un artista sin dinero se enamoran a bordo del lujoso Titanic durante su trágico viaje inaugural en 1912.",
@@ -23,7 +23,7 @@
         "Ganadora de 11 Premios Oscar",
         "incluido Mejor Película"
       ],
-      "favorite": true,
+      "favorite": false,
       "createdAt": "2026-11-20T10:00:00.000Z",
       "director": {
         "name": "James Cameron",
@@ -53,7 +53,7 @@
       "awards": [
         "Ganadora del Oscar a Mejores Efectos Visuales"
       ],
-      "favorite": false,
+      "favorite": true,
       "createdAt": "2026-11-21T10:00:00.000Z",
       "director": {
         "name": "Christopher Nolan",
