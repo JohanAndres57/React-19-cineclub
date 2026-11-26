@@ -91,8 +91,157 @@
         "bio": "Director conocido por su estilo no lineal y diálogos intensos.",
         "email": "tarantino@example.com"
       }
+    },
+    {
+      "id": "4",
+      "title": "El Señor de los Anillos: La Comunidad del Anillo",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_SX300.jpg",
+      "category": "Fantasía",
+      "rating": "+13",
+      "duration": 178,
+      "year": 2001,
+      "synopsis": "Un hobbit llamado Frodo Bolsón hereda un anillo mágico y debe emprender un viaje para destruirlo en el Monte del Destino.",
+      "cast": [
+        {
+          "actor": "Elijah Wood",
+          "role": "Frodo Bolsón"
+        },
+        {
+          "actor": "Ian McKellen",
+          "role": "Gandalf"
+        }
+      ],
+      "awards": [
+        "Ganadora de 4 Premios Oscar"
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-23T10:00:00.000Z",
+      "director": {
+        "name": "Peter Jackson",
+        "bio": "Director neozelandés, famoso por la trilogía de El Señor de los Anillos.",
+        "email": "jackson@example.com"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Toy Story",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZTA3OWVjOWItNjE1NS00NzZiLWE1MjgtZDZhMWI1ZTlkNzYwXkEyXkFqcGc@._V1_SX300.jpg",
+      "category": "Animación",
+      "rating": "ATP",
+      "duration": 81,
+      "year": 1995,
+      "synopsis": "Un vaquero de juguete se siente amenazado por la llegada de un nuevo juguete espacial, Buzz Lightyear.",
+      "cast": [
+        {
+          "actor": "Tom Hanks",
+          "role": "Woody"
+        },
+        {
+          "actor": "Tim Allen",
+          "role": "Buzz Lightyear"
+        }
+      ],
+      "awards": [
+        "Oscar Especial a la Trayectoria"
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-24T10:00:00.000Z",
+      "director": {
+        "name": "John Lasseter",
+        "bio": "Director pionero de la animación por computadora.",
+        "email": "lasseter@example.com"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Matrix",
+      "poster": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_SX300.jpg",
+      "category": "Ciencia Ficción",
+      "rating": "+16",
+      "duration": 136,
+      "year": 1999,
+      "synopsis": "Un hacker descubre que la realidad es una simulación creada por máquinas y se une a una rebelión para liberar a la humanidad.",
+      "cast": [
+        {
+          "actor": "Keanu Reeves",
+          "role": "Neo"
+        },
+        {
+          "actor": "Laurence Fishburne",
+          "role": "Morpheus"
+        }
+      ],
+      "awards": [
+        "Ganadora de 4 Premios Oscar"
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-25T10:00:00.000Z",
+      "director": {
+        "name": "Lana y Lilly Wachowski",
+        "bio": "Hermanas directoras conocidas por su estilo visual innovador.",
+        "email": "wachowski@example.com"
+      }
+    },
+    {
+      "id": "7",
+      "title": "Coco",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDIyM2E2NTAtMzlhNy00ZGUxLWI1NjgtZDY5MzhiMDc5NGU3XkEyXkFqcGc@._V1_SX300.jpg",
+      "category": "Animación",
+      "rating": "ATP",
+      "duration": 105,
+      "year": 2017,
+      "synopsis": "Un niño aspirante a músico es transportado a la Tierra de los Muertos, donde busca la verdad sobre su familia.",
+      "cast": [
+        {
+          "actor": "Anthony Gonzalez",
+          "role": "Miguel"
+        },
+        {
+          "actor": "Gael García Bernal",
+          "role": "Héctor"
+        }
+      ],
+      "awards": [
+        "Ganadora del Oscar a Mejor Película Animada"
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-26T10:00:00.000Z",
+      "director": {
+        "name": "Lee Unkrich",
+        "bio": "Director de cine de animación estadounidense.",
+        "email": "unkrich@example.com"
+      }
+    },
+    {
+      "id": "8",
+      "title": "El Conjuro",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTM3NjA1NDMyMV5BMl5BanBnXkFtZTcwMDQzNDMzOQ@@._V1_SX300.jpg",
+      "category": "Terror",
+      "rating": "+18",
+      "duration": 112,
+      "year": 2013,
+      "synopsis": "Los investigadores paranormales Ed y Lorraine Warren ayudan a una familia aterrorizada por una presencia oscura en su granja.",
+      "cast": [
+        {
+          "actor": "Vera Farmiga",
+          "role": "Lorraine Warren"
+        },
+        {
+          "actor": "Patrick Wilson",
+          "role": "Ed Warren"
+        }
+      ],
+      "awards": [
+        "Premio a Mejor Película de Terror"
+      ],
+      "favorite": false,
+      "createdAt": "2026-11-27T10:00:00.000Z",
+      "director": {
+        "name": "James Wan",
+        "bio": "Director australiano especializado en cine de terror.",
+        "email": "wan@example.com"
+      }
     }
-    
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
+  
 }
