@@ -5,12 +5,14 @@ import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import './index.css'
+import Movies from './pages/Movies'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
     children: [
+      { path: 'movies', element: <Movies /> },
       { index: true, element: <Home /> },
       { path: '*', element: <NotFound /> }
     ]
