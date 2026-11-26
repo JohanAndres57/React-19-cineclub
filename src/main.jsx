@@ -9,12 +9,20 @@ import Movies from './pages/Movies'
 import MovieDetail, { movieLoader } from './pages/MovieDetail'
 import ErrorPage from './pages/ErrorPage'
 import AddMovie from './pages/AddMovie'
+import EditMovie from './pages/EditMovie'
 
 const router = createBrowserRouter([
   {
+    
     path: '/',
     element: <MainLayout />,
     children: [
+      {
+  path: 'edit-movie/:id',
+  element: <EditMovie />,
+  loader: movieLoader,
+  errorElement: <ErrorPage />
+},
       {
   path: 'movies/:id',
   element: <MovieDetail />,
