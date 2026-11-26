@@ -8,6 +8,7 @@ import './index.css'
 import Movies from './pages/Movies'
 import MovieDetail, { movieLoader } from './pages/MovieDetail'
 import ErrorPage from './pages/ErrorPage'
+import AddMovie from './pages/AddMovie'
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,8 @@ const router = createBrowserRouter([
 },
       { path: 'movies', element: <Movies /> },
       { index: true, element: <Home /> },
-      { path: '*', element: <NotFound /> }
+      { path: '*', element: <NotFound /> },
+      { path: 'add-movie', element: <AddMovie /> }
     ]
   }
 ])
