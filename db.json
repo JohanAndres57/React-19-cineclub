@@ -53,7 +53,7 @@
       "awards": [
         "Ganadora del Oscar a Mejores Efectos Visuales"
       ],
-      "favorite": true,
+      "favorite": false,
       "createdAt": "2026-11-21T10:00:00.000Z",
       "director": {
         "name": "Christopher Nolan",
@@ -242,6 +242,6 @@
         "email": "wan@example.com"
       }
     }
-  ]
-  
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -1,10 +1,10 @@
 import { useLoaderData, useNavigate } from 'react-router';
-import { updateMovie } from '../services/moviesApi';
 import { toast } from 'react-toastify';
+import { updateMovie } from '../services/moviesApi';
 import MovieForm from '../components/MovieForm';
 
 export default function EditMovie() {
-  // La película se carga con el mismo loader que usa MovieDetail (ver main.jsx)
+  // Usa el mismo movieLoader que MovieDetail (ver main.jsx)
   const movie = useLoaderData();
   const navigate = useNavigate();
 
@@ -14,18 +14,19 @@ export default function EditMovie() {
       await updateMovie(movie.id, { ...movie, ...changes });
       toast.success('Película actualizada');
       navigate(`/movies/${movie.id}`);
-    } catch (error) {
+    } catch {
       toast.error('Error al actualizar');
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-      <h1 className="text-3xl font-bold mb-6">Editar Película</h1>
+    <div className="mx-auto max-w-2xl rounded-xl bg-white p-4 shadow-lg sm:p-8">
+      <title>{`Editar ${movie.title} | CineClub`}</title>
+      <h1 className="mb-6 text-3xl font-bold">Editar película</h1>
       <MovieForm
         initialMovie={movie}
         onSubmit={handleSubmit}
-        submitText="Guardar Cambios"
+        submitText="Guardar cambios"
         submitClass="bg-blue-600 hover:bg-blue-700"
         onCancel={() => navigate(`/movies/${movie.id}`)}
       />

@@ -1,28 +1,90 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import { FaFilm, FaStar } from 'react-icons/fa';
+import Hero from '../components/Hero';
+import Card from '../components/Card';
+import MovieCard from '../components/MovieCard';
+import Spinner from '../components/Spinner';
+import { getLatestMovies } from '../services/moviesApi';
 
 export default function Home() {
+  const [latestMovies, setLatestMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // ignore evita guardar datos si el componente se desmontó antes de que llegara la respuesta
+    let ignore = false;
+
+    const loadLatest = async () => {
+      try {
+        const data = await getLatestMovies(3);
+        if (!ignore) setLatestMovies(data);
+      } catch (err) {
+        if (!ignore) setError(err.message);
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    };
+
+    loadLatest();
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
+  const handleFavoriteChange = (updated) => {
+    setLatestMovies((prev) => prev.map((m) => (m.id === updated.id ? updated : m)));
+  };
+
   return (
     <div className="space-y-12">
-      <section className="text-center py-16 bg-gray-900 text-white rounded-xl shadow-lg">
-        <h1 className="text-5xl font-extrabold mb-4 text-yellow-500">Bienvenido a CineClub</h1>
-        <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-          Tu catálogo personal de películas. Explora, descubre y guarda tus favoritas.
-        </p>
+      <title>Inicio | CineClub</title>
+      <meta name="description" content="CineClub: tu catálogo personal de películas." />
+
+      <Hero />
+
+      <section className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <Card>
+          <FaFilm className="mb-4 text-4xl text-yellow-500" aria-hidden="true" />
+          <h2 className="mb-2 text-2xl font-bold">Para cinéfilos</h2>
+          <p className="mb-4 text-gray-600">
+            Encuentra el reparto, los premios y el director de tus películas favoritas.
+          </p>
+          <Link to="/movies" className="inline-block rounded bg-gray-900 px-4 py-2 text-white hover:bg-gray-800">
+            Explorar catálogo
+          </Link>
+        </Card>
+        <Card bg="bg-yellow-50">
+          <FaStar className="mb-4 text-4xl text-yellow-500" aria-hidden="true" />
+          <h2 className="mb-2 text-2xl font-bold">Para coleccionistas</h2>
+          <p className="mb-4 text-gray-600">
+            Agrega nuevas películas a tu colección y marca tus favoritas para tenerlas siempre a mano.
+          </p>
+          <Link to="/add-movie" className="inline-block rounded bg-gray-900 px-4 py-2 text-white hover:bg-gray-800">
+            Agregar película
+          </Link>
+        </Card>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-yellow-500">
-          <FaFilm className="text-4xl text-yellow-500 mb-4" />
-          <h2 className="text-2xl font-bold mb-2">Para Cinéfilos</h2>
-          <p className="text-gray-600 mb-4">Encuentra los detalles técnicos, reparto y premios de tus películas favoritas.</p>
-          <Link to="/movies" className="inline-block bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-800">Explorar Catálogo</Link>
-        </div>
-        <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-yellow-500">
-          <FaStar className="text-4xl text-yellow-500 mb-4" />
-          <h2 className="text-2xl font-bold mb-2">Para Coleccionistas</h2>
-          <p className="text-gray-600 mb-4">Agrega nuevas películas a tu colección y marca tus favoritas para tenerlas siempre a mano.</p>
-          <Link to="/add-movie" className="inline-block bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-800">Agregar Película</Link>
+      <section>
+        <h2 className="mb-6 text-3xl font-bold text-gray-800">Últimas películas agregadas</h2>
+        {loading && <Spinner />}
+        {!loading && error && <p className="text-center font-bold text-red-500">Error: {error}</p>}
+        {!loading && !error && latestMovies.length === 0 && (
+          <p className="text-center text-gray-500">Todavía no hay películas registradas.</p>
+        )}
+        {!loading && !error && latestMovies.length > 0 && (
+          <div className="grid-cards grid justify-center gap-4">
+            {latestMovies.map((movie) => (
+              <MovieCard key={movie.id} movie={movie} onFavoriteChange={handleFavoriteChange} />
+            ))}
+          </div>
+        )}
+        <div className="mt-8 text-center">
+          <Link to="/movies" className="inline-block rounded bg-yellow-500 px-6 py-3 font-bold text-white hover:bg-yellow-600">
+            Ver todas las películas
+          </Link>
         </div>
       </section>
     </div>

@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* Utilidad propia: columnas de 180px que se acomodan solas según el ancho de la pantalla */
+@utility grid-cards {
+  grid-template-columns: repeat(auto-fill, 180px);
+}

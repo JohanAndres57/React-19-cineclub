@@ -50,22 +50,46 @@ npm run build   # genera la versión de producción en dist/
 
 ---
 
+
+
 ## ✅ Requisitos implementados
 
 Leyenda: ✅ cumplido · ⚠️ parcial · ❌ no implementado
 
 ### Núcleo (obligatorio)
 
-
+| RF | Requisito | Estado | Dónde |
+|---|---|---|---|
+| RF-01 | Layout con `Navbar`, `Outlet` y `ToastContainer`; `NavLink` con enlace activo resaltado | ✅ | `layouts/MainLayout.jsx`, `components/Navbar.jsx` |
+| RF-02 | Portada con `Hero` (props con valores por defecto), `Card` con `children` y prop `bg`, 3 películas más recientes y botón "Ver todas" | ✅ | `pages/Home.jsx`, `components/Hero.jsx`, `components/Card.jsx` |
+| RF-03 | Listado con `useEffect` + `fetch`, `Spinner`, mensaje de error, estado vacío, `MovieCard` con `key` estable y "Ver más / Ver menos" | ✅ | `pages/Movies.jsx`, `components/MovieCard.jsx` |
+| RF-04 | Detalle con `loader`: datos completos, reparto, premios numerados, director y botón "Volver al listado" | ✅ | `pages/MovieDetail.jsx`, `loaders/movieLoader.js` |
+| RF-05 | Crear: formulario controlado, `label` con `htmlFor`/`id`, `director` anidado, números convertidos y aviso después de la respuesta del servidor | ✅ | `pages/AddMovie.jsx`, `components/MovieForm.jsx` |
+| RF-06 | Editar: formulario precargado; al guardar vuelve al detalle con los cambios | ✅ | `pages/EditMovie.jsx` |
+| RF-07 | Eliminar con confirmación y aviso; el listado se actualiza solo | ✅ | `pages/MovieDetail.jsx` |
+| RF-08 | Página 404 y `errorElement` para `/movies/9999` | ✅ | `pages/NotFound.jsx`, `pages/ErrorPage.jsx` |
+| RF-09 | Diseño responsivo (360 px, 768 px y 1280 px) | ✅ | Navbar y formulario con breakpoints `sm:`/`md:`; tarjetas con la utilidad `grid-cards` (columnas de 180 px que se acomodan solas) |
 
 ### Intermedio
 
+| RF | Requisito | Estado | Dónde |
+|---|---|---|---|
+| RF-10 | Búsqueda por título y filtros por género y clasificación, combinables (estado derivado) | ✅ | `pages/Movies.jsx`, `components/MovieFilters.jsx` |
+| RF-11 | Filas dinámicas para agregar y quitar actores y premios, sin mutar el arreglo | ✅ | `components/MovieForm.jsx` |
+| RF-12 | Favoritas: corazón en tarjeta y en detalle, página `/favorites` y estrategia justificada | ✅ | `components/FavoriteButton.jsx`, `pages/Favorites.jsx` |
+| RF-13 | Validación con mensajes junto a cada campo inválido | ✅ | `components/MovieForm.jsx`, `components/Input.jsx` |
+| RF-14 | Paginación con "Anterior / Siguiente" y número de página | ✅ | `pages/Movies.jsx`, `components/Pagination.jsx` |
 
+### Reto React 19 (elegir al menos dos)
 
-### Reto React 19 
-
-
-
+| RT | Requisito | Estado | Dónde |
+|---|---|---|---|
+| RT-01 | Formulario con Action y `useActionState` | ❌ | Ver "Retos de React 19" |
+| RT-02 | `SubmitButton` con `useFormStatus` | ❌ | Ver "Retos de React 19" |
+| RT-03 | Favorita optimista con `useOptimistic` | ✅ | `components/FavoriteButton.jsx` |
+| RT-04 | Datos con `use()` y `<Suspense>` | ❌ | — |
+| RT-05 | `<title>` propio en cada página | ✅ | Todas las páginas de `pages/` |
+| RT-06 | `ref` como prop en un `Input` reutilizable | ✅ | `components/Input.jsx`, `components/MovieForm.jsx` |
 
 ---
 
@@ -98,12 +122,6 @@ Todavía no he implementado ninguno de los retos RT-01 a RT-06.
 
 3. **Error al abrir una película que no existe (`/movies/9999`).**
    **Solución:** el `movieLoader` lanza `throw new Response(..., { status: 404 })` y la ruta tiene `errorElement: <ErrorPage />`, que muestra un mensaje claro con un enlace de regreso.
-
-4. **La app y la API estaban en puertos distintos.**
-   **Solución:** configuré un proxy en `vite.config.js` para que todas las peticiones a `/api` lleguen a json-server.
-
-5. **El reparto y los premios son arreglos, pero el formulario trabaja con texto.**
-   **Solución:** el reparto se escribe como `Actor:Rol, Actor2:Rol2` y `formToMovie` lo convierte en arreglo de objetos con `split`, `map` y `filter`, sin mutar el estado.
 
 ---
 

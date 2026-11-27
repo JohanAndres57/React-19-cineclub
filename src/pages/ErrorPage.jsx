@@ -1,12 +1,23 @@
-import { useRouteError, Link } from 'react-router';
+import { useRouteError, isRouteErrorResponse, Link } from 'react-router';
 
 export default function ErrorPage() {
   const error = useRouteError();
+
+  let message = 'Ocurrió un error inesperado.';
+  if (isRouteErrorResponse(error)) {
+    message = typeof error.data === 'string' ? error.data : error.statusText;
+  } else if (error instanceof Error) {
+    message = error.message;
+  }
+
   return (
-    <div className="text-center p-20">
-      <h1 className="text-4xl font-bold text-red-600 mb-4">¡Ups! Algo salió mal</h1>
-      <p className="text-gray-600 mb-6">{error?.message || 'No pudimos encontrar lo que buscabas.'}</p>
-      <Link to="/" className="bg-yellow-500 text-white px-4 py-2 rounded">Volver al inicio</Link>
+    <div className="p-10 text-center sm:p-20">
+      <title>Error | CineClub</title>
+      <h1 className="mb-4 text-4xl font-bold text-red-600">¡Ups! Algo salió mal</h1>
+      <p className="mb-6 text-gray-600">{message}</p>
+      <Link to="/" className="rounded bg-yellow-500 px-4 py-2 text-white hover:bg-yellow-600">
+        Volver al inicio
+      </Link>
     </div>
   );
 }
